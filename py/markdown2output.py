@@ -16,7 +16,6 @@ def marktooutput(mdout, ids):
         writef.write(mdout)
         
 def mdtopptx():
-    outdir = f"../out/"
-    subprocess.call(["pandoc","-o",f"{outdir}homework.pptx", \
-        f"{outdir}8483040.md", f"{outdir}13883932.md", \
-            f"{outdir}70598275.md", f"{outdir}65374769.md"])
+    os.chdir("../out/")
+    allmdout = os.listdir()
+    subprocess.call(["pandoc","-o", "hw.pptx", *allmdout])
