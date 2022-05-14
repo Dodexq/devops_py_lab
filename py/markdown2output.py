@@ -1,4 +1,3 @@
-from encodings import utf_8
 import os
 import markdown2input as m2i
 import slide2md
