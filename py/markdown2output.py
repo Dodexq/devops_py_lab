@@ -1,24 +1,12 @@
 import os
 import markdown2input as m2i
+import slide2md
 import subprocess
 
 def create_tmp():
     incsv = m2i.inputmd()
     for i in incsv:
-        slide_md="""
-## {model}
-:::::::::::::: {{.columns}}
-::: {{.column }}
-* вендор: {vendor}
-* модель: {model}
-* артикул: {product_id}
-* цена: {price}
-:::
-::: {{.column }}
-![фото товара](../pic/{product_id}.png)
-:::
-::::::::::::::
-""".format_map(i)
+        slide_md = slide2md.slide.format_map(i)
         marktooutput(slide_md, i["product_id"])
 
 def marktooutput(mdout, ids):
