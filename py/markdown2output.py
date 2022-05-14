@@ -1,3 +1,4 @@
+from encodings import utf_8
 import os
 import markdown2input as m2i
 import slide2md
@@ -12,7 +13,7 @@ def create_tmp():
 def marktooutput(mdout, ids):
     os.chdir(os.path.dirname(__file__))
     outdir = f"../out/"
-    with open(f"{outdir}{ids}.md", "w") as writef:
+    with open(f"{outdir}{ids}.md", encoding="utf-8", mode="w") as writef:
         writef.write(mdout)
         
 def mdtopptx():
