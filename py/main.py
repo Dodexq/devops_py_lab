@@ -1,7 +1,8 @@
 import markdown2output as m2o
 
-if __name__ == "__main__":
+def main():
     m2o.create_tmp()
     m2o.mdtopptx()
-else:
-    print("Start program in /main.py")
+
+main()
+print("Work is done!")

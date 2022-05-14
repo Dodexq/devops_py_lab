@@ -14,6 +14,7 @@ def marktooutput(mdout, ids):
     outdir = f"../out/"
     with open(f"{outdir}{ids}.md", "w") as writef:
         writef.write(mdout)
+        
 def mdtopptx():
     outdir = f"../out/"
     subprocess.call(["pandoc","-o",f"{outdir}homework.pptx", \
